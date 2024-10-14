@@ -1,3 +1,4 @@
+
 /* Estilo geral */
 body {
     font-family: Arial, sans-serif;
@@ -8,17 +9,13 @@ body {
 }
 
 header {
-    background-color: #023f7c;
+    background-color: #092353;
     color: white;
-    padding: 10px;
+    padding: 50px;
     display: flex;
     align-items: center;
     position: relative;
     justify-content: space-between;
-}
-
-.logo {
-    flex-shrink: 0;
 }
 
 .header-center {
@@ -37,13 +34,13 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0;
+    margin: 25px 0 0;
     display: flex;
     justify-content: center;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
@@ -54,7 +51,7 @@ nav ul li a {
 
 .intro {
     padding: 50px;
-    background-color: #023f7c;
+    background-color: #092353;
     color: white;
     text-align: center;
 }
@@ -74,7 +71,6 @@ section {
 }
 
 .service-item, .product-item {
-    position: relative;
     background-color: white;
     border-radius: 5px;
     padding: 20px;
@@ -82,29 +78,11 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 250px;
     text-align: center;
-    overflow: hidden;
 }
 
 .service-item img, .product-item img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.service-details, .product-details {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 77, 153, 0.9);
-    color: white;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: top 0.3s ease;
-}
-
-.service-item:hover .service-details, .product-item:hover .product-details {
-    top: 0;
+    height: auto;
 }
 
 .contact-container {
@@ -150,6 +128,7 @@ footer {
     padding: 10px;
 }
 
+/* Fixed icons for WhatsApp and Instagram */
 .fixed-icons {
     position: fixed;
     bottom: 20px;
@@ -166,5 +145,88 @@ footer {
 }
 
 .fixed-icons a:hover {
-    color: #00FFAA; /* Cor ao passar o mouse */
+    color: #00FFAA; /* Hover color */
+}
+
+/* Theme toggle button fixed in the bottom-left corner */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #007a4d;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background-color: #004d99;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode header, 
+.dark-mode footer {
+    background-color: #1f1f1f;
+}
+
+.dark-mode .service-item, 
+.dark-mode .product-item {
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive Design Adjustments */
+@media only screen and (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .services-container, .products-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item, .product-item {
+        width: 90%;
+        margin: 20px 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section {
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .service-item, .product-item {
+        width: 100%;
+    }
+
+    .theme-toggle {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+
+/* Zoom and scalability */
+body {
+    zoom: 1; /* Default zoom level */
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+    body {
+        zoom: 1.1; /* Slight zoom for high-density screens */
+    }
 }
