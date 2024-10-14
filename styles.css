@@ -171,7 +171,9 @@ footer {
     background-color: #121212;
     color: #e0e0e0;
 }
-
+.dark-mode .intro{
+    background-color: #1f1f1f;
+}
 .dark-mode header, 
 .dark-mode footer {
     background-color: #1f1f1f;
